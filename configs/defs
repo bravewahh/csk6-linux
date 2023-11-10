@@ -1,0 +1,26 @@
+target_out := $(root_dir)/build
+
+uboot_binary_name := u-boot.bin
+uboot_with_dtb_binary_name := u-uboot-dtb.bin
+kernel_binary_name := xipuimage.bin
+kernel_dtb_name := stm32f429-disco.dtb
+romfs_binary_name := romfs.bin
+
+
+target_out_uboot := $(target_out)/uboot
+target_out_linux := $(target_out)/linux
+target_out_busybox := $(target_out)/busybox
+target_out_romfs := $(target_out)/romfs
+images_out_dir := $(target_out)/images
+
+uboot_target :=  $(target_out_uboot)/$(uboot_binary_name)
+linux_target := $(target_out_linux)/arch/arm/boot/$(kernel_binary_name)
+linux_dtb_target := $(target_out_linux)/arch/arm/boot/dts/$(kernel_dtb_name)
+rootfs_target := $(target_out_romfs)/$(romfs_binary_name)
+
+flash_load_hex_address := 0x8000000
+uboot_partition_offset := 0
+linux_dtb_partition_offset := 196608
+linux_kernel_partition_offset := 262144
+linux_kernel_hex_address := $(shell printf "0x%X" $$(($(flash_load_hex_address) + $(linux_kernel_partition_offset))))
+

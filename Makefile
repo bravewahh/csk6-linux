@@ -1,7 +1,7 @@
 SHELL := /bin/bash
 root_dir := $(shell pwd)
 CROSS_COMPILE ?= arm-linux-gnueabihf-
-
+ROOTFS_CROSS_COMPILE ?= arm-uclinuxeabi-
 include configs/sources
 include configs/defs
 
@@ -9,7 +9,7 @@ include configs/defs
 TARGETS := $(uboot_target) $(linux_target) $(rootfs_target)
 
 
-build: build-linux build-uboot generate-image
+build: generate-image build-rootfs
 
 all: update build
 
@@ -38,3 +38,4 @@ distclean:
 include configs/mk/download.mak
 include configs/mk/linux.mak
 include configs/mk/uboot.mak
+include configs/mk/rootfs.mak

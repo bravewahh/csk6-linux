@@ -12,6 +12,7 @@ target_out_linux := $(target_out)/linux
 target_out_busybox := $(target_out)/busybox
 target_out_romfs := $(target_out)/romfs
 images_out_dir := $(target_out)/images
+romfs_dir := $(root_dir)/rootfs
 
 uboot_target :=  $(target_out_uboot)/$(uboot_binary_name)
 linux_target := $(target_out_linux)/arch/arm/boot/$(kernel_binary_name)

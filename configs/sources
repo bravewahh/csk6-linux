@@ -10,3 +10,6 @@ linux_remote_url := https://github.com/bravewahh/linux.git
 linux_path := ${opensource_path}/linux
 linux_version := origin/feature/support_csk6
 
+busybox_url := http://busybox.net/downloads
+busybox_path := ${opensource_path}/busybox
+busybox_version := busybox-1.22.1

@@ -26,4 +26,9 @@ update-uboot:
 update-linux:
 	$(info $(shell python3 $(root_dir)/configs/script/git_checkout.py -r $(linux_remote_url) -l $(linux_path) -m $(linux_version)))
 
+update-busybox:
+	$(shell mkdir -p ${busybox_path})
+	$(info $(shell wget -P $(opensource_path) -c $(busybox_url)/$(busybox_version).tar.bz2))
+	$(info $(shell tar -jxf $(opensource_path)/${busybox_version}.tar.bz2 -C $(busybox_path)))
+
 update-opensource: update-uboot update-linux

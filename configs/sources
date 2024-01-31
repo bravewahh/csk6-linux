@@ -4,9 +4,9 @@ opensource_path := ${root_dir}/opensource
 
 uboot_remote_url := https://github.com/bravewahh/u-boot.git
 uboot_path := ${opensource_path}/u-boot
-uboot_version := origin/feature/support_csk6
+uboot_version := 8b00cd09ef5f96782ec7411aeba880f38dd549b0
 
 linux_remote_url := https://github.com/bravewahh/linux.git
 linux_path := ${opensource_path}/linux
-linux_version := origin/feature/support_csk6
+linux_version := 158cd87b956b9b9428ad9368e63b19a12dd3f70c
 
